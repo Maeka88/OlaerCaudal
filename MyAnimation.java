@@ -13,7 +13,6 @@ public class MyAnimation extends JFrame implements KeyListener{
 
 	public MyAnimation(){
 		this.draw = new Drawing();
-
 	}
 	
 	public void keyPressed(KeyEvent e){
@@ -27,7 +26,7 @@ public class MyAnimation extends JFrame implements KeyListener{
 			System.out.print("Baam");
 		}
 
-		else if(e.getKeyCode() == KeyEvent.VK_LEFT){
+		if(e.getKeyCode() == KeyEvent.VK_LEFT){
 			draw.moveLeft();
 			System.out.print("Biim");
 		}
@@ -36,6 +35,9 @@ public class MyAnimation extends JFrame implements KeyListener{
 			draw.moveRight();
 			System.out.print("Beem");
 		}
+		/*else if(e.getKeyCode() == KeyEvent.VK_SPACE){
+			draw.charge();
+		}*/
 	}
 	public void keyTyped(KeyEvent e){
 	
@@ -47,7 +49,7 @@ public class MyAnimation extends JFrame implements KeyListener{
 	public static void  main (String args[]){
 		//animation
 		MyAnimation myFrame = new MyAnimation();
-		myFrame.setSize(600,600);
+		myFrame.setSize(1000,420);
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		myFrame.setVisible(true);
 		myFrame.add(myFrame.draw);
